@@ -42,6 +42,8 @@ function App() {
       <style type="text/css">
         {`
           .btn-active {
+            font-weight: 600;
+            width: 100px;
             margin: 5px;
             background-color: #034046;
             color: white;
@@ -49,6 +51,8 @@ function App() {
             border-color: #034046;
           }
           .btn-inactive {
+            font-weight: 600;
+            width: 100px;
             margin: 5px;
             background-color: white;
             color: #034046;
@@ -62,11 +66,25 @@ function App() {
             margin: 0.5rem;
             font-size: 0.8rem;
           }
+          .greendrop {
+            font-weight: 600;
+            background-color: #034046;
+            border-color:  #034046;
+          } 
+          .greendrop:hover {
+            background-color: #034046;
+            border-color:  #034046;
+          } 
+          .greendrop:focus {
+            background-color: #034046;
+            border-color:  #034046;
+          } 
+      
           `}
       </style>
       <div className='dropdown'>
         <Dropdown>
-          <Dropdown.Toggle style={{backgroundColor: "#034046", borderWidth: 0, marginTop: 10, marginBottom: 10}} variant="success" id="dropdown-basic">
+          <Dropdown.Toggle className={["mb-3", "mt-3", "greendrop"]} id="greendrop">
             {sportSelection}
           </Dropdown.Toggle>
           <Dropdown.Menu>
@@ -79,13 +97,13 @@ function App() {
         </Dropdown>
       </div>
       <div className='tabs'>
-        <Container style={{ paddingBottom: 15 }}>
+        <Container className="pb-3">
           <Row xs={2} md={4} lg={10}>
-            <Button style={{ width: 100 }} variant={sportSelection === "All Sports" ? "active" : "inactive"} onClick={() => filterBySport("All Sports")}>All Sports</Button>
-            <Button style={{ width: 100 }} variant={sportSelection === "Hockey" ? "active" : "inactive"} onClick={() => filterBySport("Hockey")}>Hockey</Button>
-            <Button style={{ width: 100 }} variant={sportSelection === "Football" ? "active" : "inactive"} onClick={() => filterBySport("Football")}>Football</Button>
-            <Button style={{ width: 100 }} variant={sportSelection === "Basketball" ? "active" : "inactive"} onClick={() => filterBySport("Basketball")}>Basketball</Button>
-            <Button style={{ width: 100 }} variant={sportSelection === "Baseball" ? "active" : "inactive"} onClick={() => filterBySport("Baseball")}>Baseball</Button>
+            <Button variant={sportSelection === "All Sports" ? "active" : "inactive"} onClick={() => filterBySport("All Sports")}>All Sports</Button>
+            <Button variant={sportSelection === "Hockey" ? "active" : "inactive"} onClick={() => filterBySport("Hockey")}>Hockey</Button>
+            <Button variant={sportSelection === "Football" ? "active" : "inactive"} onClick={() => filterBySport("Football")}>Football</Button>
+            <Button variant={sportSelection === "Basketball" ? "active" : "inactive"} onClick={() => filterBySport("Basketball")}>Basketball</Button>
+            <Button variant={sportSelection === "Baseball" ? "active" : "inactive"} onClick={() => filterBySport("Baseball")}>Baseball</Button>
           </Row>
         </Container>
       </div>
